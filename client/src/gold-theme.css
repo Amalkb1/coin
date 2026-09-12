@@ -1,0 +1,173 @@
+:root {
+  --ink: #f7f0df;
+  --muted: #a99e8d;
+  --line: rgba(218, 176, 84, .2);
+  --orange: #e5a83f;
+  --lime: #f3ca69;
+  --panel: #17130e;
+  --soft: #211b13;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% -12%, rgba(190, 133, 42, .2), transparent 34%),
+    radial-gradient(circle at 90% 70%, rgba(92, 50, 16, .16), transparent 30%),
+    #0c0b09;
+}
+
+.flip-app {
+  max-width: 1040px;
+  background: linear-gradient(180deg, rgba(24, 19, 12, .35), transparent 34%);
+}
+
+.flip-header {
+  border-bottom-color: rgba(218, 176, 84, .25);
+}
+
+.brand-mark {
+  border-color: #e7b34e;
+  color: #f3ca69;
+  box-shadow: 0 0 18px rgba(229, 168, 63, .16);
+}
+
+.brand b,
+.flip-kicker,
+.flip-result span {
+  color: #e5a83f;
+}
+
+.flip-stage h1 {
+  color: #f7f0df;
+  text-shadow: 0 2px 24px rgba(215, 157, 52, .14);
+}
+
+.flip-scene {
+  background: linear-gradient(145deg, rgba(31, 24, 15, .96), rgba(14, 13, 10, .98));
+  border-color: rgba(218, 176, 84, .27);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45), inset 0 1px rgba(255, 222, 143, .08);
+}
+
+.flip-app .scene-label span:first-child {
+  color: #f3ca69;
+}
+
+.flip-result {
+  padding: 18px 24px 20px;
+  border: 1px solid rgba(218, 176, 84, .24);
+  background: linear-gradient(135deg, rgba(57, 38, 15, .48), rgba(22, 17, 11, .34));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .22);
+}
+
+.flip-result strong {
+  color: #f3ca69;
+  text-shadow: 0 0 26px rgba(229, 168, 63, .25);
+}
+
+.flip-button {
+  background: linear-gradient(135deg, #f2c35c, #bd7825);
+  box-shadow: 0 10px 28px rgba(189, 120, 37, .22), inset 0 1px rgba(255, 245, 190, .55);
+}
+
+.flip-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ffda7b, #d28b2d);
+}
+
+.reset-button,
+.sound-button {
+  border-color: rgba(218, 176, 84, .24);
+}
+
+.scene {
+  background: radial-gradient(ellipse at 50% 28%, rgba(163, 111, 32, .14), transparent 44%), linear-gradient(180deg, #201a11 0%, #18140e 54%, #0d0c09 100%);
+}
+
+.scene::before {
+  background: linear-gradient(rgba(222, 176, 77, .27) 1px, transparent 1px), linear-gradient(90deg, rgba(222, 176, 77, .2) 1px, transparent 1px);
+}
+
+.scene::after {
+  border-color: rgba(239, 185, 70, .2);
+  box-shadow: 0 0 45px rgba(214, 147, 37, .12), inset 0 0 45px rgba(214, 147, 37, .07);
+}
+
+.coin {
+  filter: drop-shadow(0 18px 10px rgba(0, 0, 0, .82));
+  box-shadow: 0 0 0 2px #85581f, 0 0 0 5px rgba(255, 221, 121, .28), inset 0 0 18px rgba(255, 250, 208, .3);
+  animation: coin-pulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes coin-pulse {
+  0% {
+    filter: drop-shadow(0 18px 10px rgba(0, 0, 0, .82));
+    box-shadow: 0 0 0 2px #85581f, 0 0 0 5px rgba(255, 221, 121, .28), inset 0 0 18px rgba(255, 250, 208, .3);
+  }
+  100% {
+    filter: drop-shadow(0 20px 14px rgba(229, 168, 63, .3));
+    box-shadow: 0 0 0 2px #d28b2d, 0 0 0 7px rgba(255, 230, 150, .45), inset 0 0 28px rgba(255, 250, 208, .7);
+  }
+}
+
+.coin-face {
+  background: radial-gradient(circle at 30% 22%, #fff0a9, #e4a83d 46%, #9b5a17 82%, #6d3d12);
+  border-color: #b87820;
+  box-shadow: inset 0 0 0 2px #ffe39a, inset 0 0 15px #8b4e13, 0 0 12px rgba(225, 157, 45, .25);
+  color: #5c330d;
+}
+
+.coin-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.1) 35%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.1) 65%,
+    transparent 80%
+  );
+  background-size: 300% 300%;
+  mix-blend-mode: overlay;
+  animation: coin-shine 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes coin-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.coin-face.back {
+  background: radial-gradient(circle at 65% 22%, #ffe9a0, #d7942c 48%, #884c14 83%, #60350f);
+}
+
+.coin-edge {
+  border-color: #c78525;
+  color: #6b3e12;
+  background: linear-gradient(90deg, #855016, #edbb50 25%, #9d5d18 52%, #f0bf55 78%, #764410);
+  box-shadow: inset 0 0 8px rgba(48, 23, 4, .8), 0 0 0 2px rgba(255, 224, 136, .28);
+}
+
+.coin::before {
+  background: linear-gradient(90deg, #75430f, #f2c45a 28%, #a56518 52%, #f1bd4b 78%, #6d3b0d);
+  box-shadow: 0 0 0 2px #89541a, 0 5px 0 #4e2909;
+}
+
+.table {
+  background: linear-gradient(180deg, #d3a056 0%, #8f5c28 25%, #4d2d17 100%);
+  border-top-color: #f2c16b;
+  box-shadow: 0 16px 0 #24170d, 0 22px 28px rgba(0, 0, 0, .6);
+}
+
+.shadow {
+  background: #000;
+}
+
+.flip-app footer {
+  color: #75654d;
+}
+
+.flip-app footer span {
+  color: #d99b35;
+}
